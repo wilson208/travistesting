@@ -1,3 +1,6 @@
 language: ruby
 rvm:
  - 2.2
+before_script:
+ - echo 'Before Script Runs'
+ - echo $TRAVIS_COMMIT_RANGE
