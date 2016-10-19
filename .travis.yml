@@ -2,5 +2,5 @@ language: ruby
 rvm:
  - 2.2
 before_script:
- - 'git diff --name-only $TRAVIS_COMMIT_RANGE > changed.txt'
- - 'if grep -q "DO_NOT_EDIT.msg" "changed.txt"; then echo "Cannot Edit DO_NOT_EDIT.msg"; exit 1; fi'
+ - 'if ![-z "$TRAVIS_COMMIT_RANGE"]; then git diff --name-only $TRAVIS_COMMIT_RANGE > changed.txt; else git show --pretty="" --name-only $TRAVIS_COMMIT > changed.txt; fi;'
+ - 'if grep -q "DO_NOT_EDIT.msg" "changed.txt"; then echo "Cannot Edit DO_NOT_EDIT.msg"; exit 1; fi;'
