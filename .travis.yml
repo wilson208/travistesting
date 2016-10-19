@@ -2,6 +2,4 @@ language: ruby
 rvm:
  - 2.2
 before_script:
- - "echo 'Before Script Runs'"
- - 'echo "Commit Range: $TRAVIS_COMMIT_RANGE"'
- - 'echo "Commit: $TRAVIS_COMMIT"'
+ - 'git diff --name-only $TRAVIS_COMMIT_RANGE'
