@@ -3,4 +3,5 @@ rvm:
  - 2.2
 before_script:
  - echo 'Before Script Runs'
- - echo $TRAVIS_COMMIT_RANGE
+ - echo 'Commit Range: ' + $TRAVIS_COMMIT_RANGE
+ - echo 'Commit: ' + $TRAVIS_COMMIT
